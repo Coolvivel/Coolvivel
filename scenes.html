@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en"
+<head>
+<meta charset="UTF-8">
+<title>tourist details</title>
+
+<style>
+*{
+box-sizing: border-box;
+}
+</style>
+</head>
+
+<script>
+alert("Tourist Arrival.....Enter Customer Details.");
+alert("For bookings, advance pay of 50% via Paypal to book tour.  Welcome to Paradise on Earth.  Enjoy your stay.  Assistance always at hand.  Thank You.");
+var tourdtls = [];
+var custname, email, dest, accn;
+
+custname= tourdtls.push(prompt("Customer Name:"));
+dest= tourdtls.push(prompt("Destination:"));
+accn= tourdtls.push(prompt("Inn Name:"));
+email= tourdtls.push(prompt("email id"));
+
+<? php
+if(!extension_loaded ='curl'){
+die('curl not installed or loaded, Click on given link to install <a href=" https://curl.se/download.html"></a>');
+}
+
+$ch= curl_init(url);
+curl_setopt(CURLOPT_CONNECT_ONLY,true);
+curl_setopt(CURLOPT_FAILONERROR, true);
+curl_setopt(CURLOPT_TCP_FASTOPEN,true);
+curl_setopt(CURLOPT_UPLOAD, true);
+curl_setopt(CURLOPT_POSTFIELDS, tourdtls);
+curl_setopt(CURLOPT_FILE,'cust.txt', true);
+curl_setopt(CURLOPT_INFILE,'cust.txt', true);
+curl_setopt(CURLOPT_STDERR,'/errors.txt', true);
+curl_exec($ch);
+curl_close($ch);
+?>
+</script>
+</body>
+</html>

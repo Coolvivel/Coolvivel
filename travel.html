@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<title>Travelers</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+<script href="https://github.com/travel/cooks/images/webdata"></script>
+
+<script>
+"use strict";
+$.noConflict();
+jQuery('#fine', '#subs').ready(function($){
+$('button').click(function newsletter(elemdata){
+var url="https://github.com/travel/cooks/images/webdata";
+var xhr= new XMLHttpRequest();
+xhr.onreadystatechange=function(){
+if(xhr.readystate== 4 && xhr.status== 200){
+xhr.onload =function(responseTxt, statusTxt, xhr){
+if(statusTxt== "success"){
+   alert(xhr.responseTxt);
+};
+
+xhr.onerror= function(responseTxt, statusTxt, xhr){
+alert(xhr.responseTxt);
+};
+
+xhr.open('POST', url, '/out.txt', true);
+xhr.setRequestHeader('content-Type', 'application/x-www-form-urlencoded; charset="UTF-8"');
+xhr.withCredentials= false;
+xhr.send(new FormData(elemdata));
+    }   
+   }
+  }  
+ }
+</script>
+
+<script src="https://kit.fontawesome.com/a86d37796.js" crossorigin="anonymous"></script>
+
+<script src="https://sureshs2022.w3spaces.com/travel/cooks/cook.html"></script>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+<!--  <link rel="stylesheet" href="https://-->
+
+<style>
+*{
+box-sizing: border-box;
+background-image("url:('https://sureshs2022.w3spaces.com/Travel/cooks/images/image2.jpg')");
+}
+
+.samt{
+position: relative;
+width: 1280px;
+height: auto;
+margin: auto;
+border: 26px solid orange;
+border-top-width: 60px;
+border-bottom-width: 60px;
+border-radius: 86px;
+}
+
+.container{
+position: absolute;
+left: 500px;
+top: 650px;
+width: 680px;
+height: 880px;
+border: 5px solid red;
+background-color:purple;
+border-style:dashed;
+border-radius: 60%;
+overflow: scroll;
+}
+
+.tang img{
+width: 550px;
+height: 650px;
+~webkit-transform: skewX(-8deg);
+transform: skewX(-8deg);
+}
+
+.wikipedia{
+position: absolute;
+top: 0;
+right: 170px;
+width: 13px;
+height: 5px;
+font-size: 12px;
+~webkit-transform: skewY(16deg);
+transform: skewY(16deg);
+}
+
+.tang{
+display: none;
+}
+
+.tang{
+display: inline-block;
+transition: 0.5s ease;
+animation-iteration-count: infinite;
+}
+
+.active:hover, .tang: hover{
+background-color: coral;
+}
+
+.company{
+width: 320px;
+height: 160px;
+border: 5px solid purple;
+perspective: 2000px;
+background-color: orange;
+color: blue;
+position:relative;
+left: 600px;
+top: -135px;
+}
+
+.address{
+position: relative;
+width: auto;
+height: auto;
+transition: transform 0.6s;
+transform-style: preserve-3d;
+}
+
+.company:hover, .back{
+transform: rotateY(190deg);
+}
+
+.view, .back{
+width: auto;
+height: auto;
+position: absolute;
+}
+
+.view:hover{
+transform: rotateX(170deg);
+background-color: black;
+color: white;
+backface-visibility: hidden;
+}
+
+a[href$="text"]{
+background-color: inherit;
+text-decoration: underline;
+width: 20px;
+border: 10px solid red; 
+color: blue;
+border-radius:50%;
+background-color:green;
+}
+
+#bonus{
+position: absolute;
+top: 180px;
+left: 10px;
+width: 470px;
+height: 120px;
+overflow: scroll;
+background-color: yellow;
+color: orange;
+overflow:scroll;
+font-size:14px;
+}
+
+button{
+background-color: indigo;
+color: orange;
+border: 10px solid green;
+font-size: 13px;
+}
+
+#marc
+{
+height: 220px;
+width: 330px;
+border: 10px solid black;
+background-color: pink;
+transform: skewX(180deg);
+position: absolute;
+left: 600px;
+top: 150px;
+color: blue;
+text-align:justify;
+}
+
+#desc
+{
+position: relative;
+left: 630px;
+top: 85px;
+font-size: 14px;
+height: 185px;
+width: 330px;
+border: 10px solid green;
+background-color: orange;
+transform: skewX(20deg);
+color: brown;
+text-align:justify;
+}
+
+.tour{
+height: 270px;
+width: 1215px;
+position: relative;
+top: 20px;
+left: 25px;
+border: 10px solid red;
+border-style: dashed;
+background-color: purple;
+color: brown;
+display:inline-block;
+font-size:20px;
+}
+
+.show{
+display: block;
+}
+
+p:last-child{
+     font-size: 2em;
+color: yellow;
+}
+
+button, #sele, #seles, #selame, 
+#stele, #sela{
+color: white;
+background-color: coral;
+}
+
+.grid-container {
+position:relative;
+left: 15px;
+top: 45px;
+  width: 950px;
+  display: grid;
+  grid-row-gap: 5px;
+  grid-column-gap: 1px;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto;
+  background-color: #2196F3;
+  padding: 5px;
+  justify-content: space-evenly;
+  align-content: space-between;
+}
+
+.grid-container > div{
+  background-color: orange;
+  text-align: center;
+ padding: 5px;
+  font-size: 10px;
+  border-bottom-color: red;
+  border-bottom-style: double;
+  border-bottom-width: thick;
+  border-left-style: ridge;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;  
+  
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 10px solid rgba(0, 0, 0, 0.8) dashed;
+
+  font-size: 10px;
+  text-align: center;
+}
+
+.btn{
+position:relative;
+top: -60px;
+left: 10px;
+}
+
+#fine{
+font-size:14px;
+height:70px;
+width: 4rem;
+position: absolute;
+top:100px;
+right: 215px;
+border: 14px solid blue;
+border-style:dashed;
+}
+
+#review{
+width:40%;
+}
+
+textarea{
+width:100%;
+background-color:orange;
+color:blue;
+border: 10px solid red;
+}
+
+.users_ratings{
+position:relative;
+left: 10px;
+top: 34px;
+border:10px solid brown;
+height:420px;
+width:420px;
+scroll:auto;
+}
+
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
+}
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
+</style>
+</head>
+
+<body>
+<div class="samt">
+<marquee><h1 style="text-shadow: -2px 2px 3px red, 5px -4px 2px blue;">HEAVEN EARTH's PARADISE - W3SCHOOLS PROJECT CONTRIBUTION</h1></marquee> 
+<br>
+<a href="tel: 120-230-908" style="border-radius:48%; width:20px; border:20px solid red; background-color:red; color:grey;" ><b>Helpline</b></a>
+<a href="tel: 690-300-009" style="border-radius:60%; width:20px; border:20px solid red; background-color:brown;"><b> Emergency Services
+</b></a>
+<a href="mailto:longjumper2014@gmail.com?cc=john@gmail.com&bcc=jane@gmail.com?subject=Example+
+subject&body=Message+text">Send email</a>
+<a href="tel: 658-98-654" style="border-radius:48%; width:20px; border:20px solid red; background-color:green; color: purple;" ><b>Booking</b></a>
+<br>
+
+<div class = "company">
+<div class = "address">
+<div class  = "view">
+<h5 style=" font-size: 15px; float: left;"><b>
+Marcus Tourism Pvt Ltd.,<br>
+12th Street, HillTop Cottage,<br> Ohio 69056<br></b></h5>
+</div>
+<div id = "back">
+<p>Route Map - Touch Me</p>
+      </div>
+    </div>
+ </div>
+
+<div id="bonus">
+  <h1>Festival Bonaza - Honeymoon Offer @ $150<br> Offer valid 2 months only<br>Use coupon to book tickets.
+Just couple of tickets to offer.  Buy now.</h1>
+   <h2>Coupon Code: B98NZ70</h2>
+</div> 
+
+<div id ="marc"><strong>
+Marcus is well established reputed firm since 1990 catering to tourist's demands with dedicated
+service to catering, accn and tour packages run by its own dedicated and loyal staff to offering best 
+services in tourism.</strong>
+</div>
+
+<div id="desc"><b>
+Kashmir is one of the most exotic places or called as <strong>"Heaven on Earth"</strong> with millions of tourists
+round the year.  Plenty of activities to enjoy and view scenary of nature with plentiful delicacies to offer with 
+mouth watering dishes and best place to visit ever in the world. </b> <br><br>
+</div>
+
+<b><button class="btn"><i ji class="fa fa-download"><a href="https://sureshs2022.w3spaces.com/travel/cooks/images/../" download>Download Images</a></i></button></b>
+
+<button onClick="userlocation(this)">User Location</button>
+<br>
+
+<div class="wikipedia">
+<input type = "button" id = "samefunc" onclick= "smooth()" style = "background-color: indigo;
+color: white; border: 10px solid green;" value="Jammu & Kashmir- Click" /></div>
+
+<div class='container'>
+<div class='tang'>
+ <img src = 'https://sureshs2022.w3spaces.com/travel/cooks/images/image2.jpg' alt = 'no image'><b>
+<br>Image 1/8</b>
+</div>
+
+<div class='tang'>
+<img src = 'https://sureshs2022.w3spaces.com/travel/cooks/images/image3.jpg' alt= 'no image'>
+<br/><b>Image 2/8</b>
+ </div>
+ 
+<div class='tang'>
+<img src = 'https://sureshs2022.w3spaces.com/travel/cooks/images/image4.jpg' alt= 'no image'>
+<br/><b>Image 3/8</b><br/>
+ </div>
+
+<div class='tang'>
+<img src = 'https://sureshs2022.w3spaces.com/travel/cooks/images/image5.jpg' alt= 'no image'>
+<b>Image 4/8</b><br/>
+ </div>
+
+<div class='tang'>
+<img src = 'https://sureshs2022.w3spaces.com/travel/cooks/images/image6.jpg' alt= 'no image'>
+<b>Image 5/8</b><br/>
+ </div>
+
+<div class='tang'>
+<img src = 'https://sureshs2022.w3spaces.com/travel/cooks/images/image7.jpg' alt= 'no image'>
+<b>Image 6/8</b><br/>
+ </div>
+
+<div class='tang'>
+<img src = 'https://sureshs2022.w3spaces.com/travel/cooks/images/image8.jpg' alt= 'noimage'>
+<b>Image 7/8</b><br/>
+ </div>
+
+<div class='tang'>
+<img src = 'https://sureshs2022.w3spaces.com/travel/cooks/images/image2.jpg' alt= 'no image'>
+<b>Image 8/8</b><br/>
+ </div>
+</div>
+
+<form id= "fine" method= "POST" action= "<? php echo htmlentities($_SERVER['PHP_SELF']);  echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
+<fieldset>
+<legend><strong>
+CONTACT US</strong></legend>
+<b>FULL NAME:<br/>
+<input type = "text" name = "name" value = " "><br/>
+EMAIL ID:
+<input type = "email" name = "email" value= " "><br/>
+MOBILE NO:
+<input type = "number" name = "mobile"><br/>
+<button onSubmit= "return newsletter(this)">
+Submit</button></b>
+</fieldset>
+</form>
+
+<form id= "review" method= "POST" action= "<? php echo htmlentities($_SERVER['PHP_SELF']); ?> <?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
+<fieldset>
+<legend><strong>
+REVIEW RATINGS</strong></legend><b>   
+FEEDBACK & SUGGESTIONS:
+<textarea rows= "8" column = "60" id="ratings" name="ratings"></textarea><br>
+STAR RATINGS:<br>
+FAIR:<input type="radio">
+OK:<input type="radio">
+GOOD:<input type="radio">
+WELL DONE:<input type="radio">
+NICE JOB:<input type="radio">
+<button onSubmit="return reviews(this)">Submit</button>
+</fieldset>   
+</form>
+
+<div class="users_ratings">User's Review & Ratings Displayed Here
+<script>
+function reviews(ratings) {
+var fil = this.files;
+} 
+var filer= new FileReader();
+filer.onload=function(event){
+if(isset(is_dir(url, '/out.txt'))){
+filer->file_get_contents('out.txt', true);
+}else{
+mkdir(url, '/out.txt');
+ }
+ 
+var contents= event.target.result;
+var space= contents.split('\n');
+document.getElementById('review').innerHtml= contents; filer.readAsText(fil[0]);
+}
+ </script>
+</div>
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides()
+ {
+  var i, x;
+  x = document.getElementsByClassName('tang');
+
+ for (i =0; i < x.length;  i++)
+  {
+   x[i].style.display = 'none';
+   }
+   slideIndex++;
+
+  if(slideIndex > x.length)
+  {
+  slideIndex = 1;
+ }
+  x[slideIndex-1].style.display = 'block';
+  setTimeout(showSlides, 4500);
+}
+</script>
+<br><br>
+
+<form id = "subs" method= "POST" action= "<? php echo htmlentities($_SERVER['PHP_SELF']); ?> <?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
+<fieldset>
+<legend>SUBSCRIBE TO TOUR PACKAGES</legend>
+FULL NAME:<br>
+<input type= "text" id = "name" value = "" name="name" Required><br>
+EMAIL ID:<br>
+<input type= "text" value = "" Required><br>
+SUBSCRIPTION DT:<br>
+<input type="date" id="dates" name="dates" Required>
+<button onsubmit = "newsletter(this)">Submit</button>
+</fieldset>
+</form>
+
+<div class="tour">
+<button onClick="alert('Exotic flowers, snow covered hills of the magnificent Himalayan range and panoramic views till your eyes can gaze at. that is the beauty of Gulmarg which makes it a perfect holiday destination. Gulmarg is a popular destination for visiting when it is covered with snow as you can enjoy skiing and snowboarding around this time and many honeymoon couples come to visit Gulmarg, especially during winters. There is enough snowfall for you to create snowman.')">Gulmarg - Click Here</button>
+
+<button onClick="alert('The urban lake, is integral to tourism and recreation in Kashmir and is named the Jewel in the crown of Kashmir or Srinagars Jewel. The lake is also an important source for commercial operations in fishing and water plant harvesting.')">Dal Lake</button>
+
+<button onClick="alert('Nubra Valley is known for its marvellous sand dunes and there is nothing better than having a camel ride amidst those magnificent dunes. What makes this even more distinctive is that these camels are unusual than ones that roam the desert of Rajasthan. These are bactrian camels which have two humps.')">Nubra Valley</button>
+
+<button onClick="alert('Moriri or Lake Moriri or Mountain Lake, is a lake in the Changthang Plateau of Ladakh in India. The lake and surrounding area are protected as the Tso Moriri Wetland Conservation  Reserve.')">Tso Moriri Lake</button>
+
+<button onClick="alert('Leh Palace also known as Lachen Palkar Palace is a former royal palace overlooking the city of Leh in Ladakh, India. It was constructed circa 1600 by Sengge Namgyal. The palace was abandoned when Dogra forces took control of Ladakh in the mid-19th century and forced the royal family to move to Stok Palace.')">Leh Palace</button>
+
+<button onClick="alert('The Chadar Trek or the Zanskar Gorge trek is a winter trail over the frozen Zanskar River, which lies in the Indian union territory of Ladakh. It is traditionally the only means of travel in the area during the harsh winter months. The trail has become popular with foreign adventure tourists.')">Chadar Trek</button>
+
+<button onClick="alert('Khardong La is historically important as it lies on the major caravan route from Leh to Kashgar in Central Asia. About 10,000 horses and camels used to take the route annually, and a small population of Bactrian camels can still be seen at Hunder, in the area north of the pass.')">Khardung La</button>
+
+<button onClick="alert('Magnetic Hill is a gravity hill located near Leh in Ladakh, India. The layout of the area and surrounding slopes create the optical illusion of a hill. The hill road is actually a downhill road. Objects and cars on the hill road may appear to roll uphill in defiance of gravity when they are, in fact, rolling downhill')">Magnetic Hill</button>
+
+<button onClick="alert('These are some of the oldest surviving paintings in Ladakh. The complex also has huge statues of the Buddha and elaborate wood carvings and art-work comparable to the baroque style. Shakti Maira has vividly explained the beauty of this small monastery.')">Alehi Monastry</button>
+
+<button onClick="alert('Hemis National Park is a high-elevation national park in Ladakh, India. Globally famous for its snow leopards, it is believed to have the highest density of them in any protected area in the world.')">Hemis National Park</button>
+
+<button onClick="alert('Spituk Monastery, also known as Spituk Gompa or Pethup Gompa, is a Buddhist monastery in Spituk, Leh district, Ladakh, 8 km from Leh. The site of Spituk was blessed by the Arhat Nyimagung. It was founded by Od-de, the elder brother of Lha Lama Changchub Od, when he came to Maryul in the 11th century.')">Spituk Monastry</button>
+
+<button onClick="alert('Shalimar Bagh is a Mughal garden in Srinagar, Jammu and Kashmir, India, linked through a channel to the northeast of Dal Lake. It is also known as Shalimar Gardens, Farah Baksh, and Faiz Baksh. The other famous shoreline garden in the vicinity is Nishat Bagh, The Garden of Delight')">Shalima Bagh Mughal Garden</button>
+
+<button onClick="alert('Nishat Bagh is a terraced Mughal garden built on the eastern side of the Dal Lake, close to Srinagar in the union territory of Jammu and Kashmir, India. It is the second largest Mughal garden in the Kashmir Valley. Nishat Bagh, is also located on the bank of the Dal Lake.')">Nishat Bagh</button>
+
+<button onClick="alert('Indira Gandhi Memorial Tulip garden, previously Model Floriculture Center, is a tulip garden in Srinagar, Jammu and Kashmir, India. It is the largest tulip garden in Asia spread over an area of about 30 ha.')">Tulip Gardens</button>
+
+<label for ="Visits" name = "Traveler">
+<select  id ="sele" onChange ="places(this)" multiple>
+<option value="Nigeen Lake">Nigeen Lake</option>
+<option value= "kargil City">Kargil City</option>
+<option value = "Nishan Garden">Nishan Garden</option>
+<option value="Mulbeik Monastry">Mulbeik Monastry</option>
+<option value="Drass Valley">Drass Valley</option>
+<option value= "kargil War Memorial">Kargil War Memorial</option>
+<option value ="Cablecar">Gulmarg Gondola</option>
+<option value="Gulmarg Biosphere Reserve">Gulmarg Biosphere Reserve</option>
+<option value="Strawberry Valley">Strawberry Valley</option>
+<option value="Seven Springs">Seven Springs</option>
+<option value = "Golf">Gulmarg Golf Course</option>
+<option value= "Zoji">Zoji La</option>
+<option value = "Zero Point">Zero Point</option>
+<option value = "Glacier">Thajiwas Glacier</option>
+<option value = "Baltal Valley">Baltal Valley</option>
+<option value = "krishankari">Krishankari Lake</option>
+<option value = "pulwama">Pulwama</option>
+<option value = "rajouri">Rajouri</option>
+<option value = "patnitop">Patnitop</option>
+<option value= "kupwara">Kupwara</option>
+<option value = "akhnoor">Akhnoor</option>
+<option value = "yousmarg">Yousmarg</option>
+<option value = "pahalgam">Pahalgam</option>
+<option value ="aru">Aru Valley</option>
+<option value="pangong">Pangong Lake</option>
+<option value= "manasbal">Manasbal Lake</option>
+<option value="ladakh">Ladakh</option>
+<option value= "leh">Leh</option>
+<option value="sonamarg">Sonamarg</option>
+</select>
+</label>
+
+<label name = "Travel">
+<select id="seles" onChange = "enjoy(this)" multiple>
+<option value="Shikara Ride">Shikara Ride @ $2</option>
+<option>Houseboat Stay with facilities</option>
+<option value="Gondola">Gondola Cable Car Ride</option>
+<option value="Koongdori">Gondola via Koongdori @ $8</option>
+<option value="Apharwat">Gondola via Apharwat Peak @ $10</option>
+<option value="Mary Shoulder">Gondola via Mary Shoulder [Chair Lift] @ $5</option>
+<option value="Golf Club">Gulmarg Golf Club @ $16</optionvalue>
+<option value="Pony Ride">Pony Ride Excursions - Sonamarg</option>
+<option value="Old Heritage">Old Srinagar Heritage Walk</option>
+<option value="Wildlife">Wildlife Tour</option>
+</select>
+</label>
+
+<label name = "Travelling">
+<select id="selame" onchange = "raft(this)" multiple>
+<option value="River Rafting">River Rafting</option>
+<option value="Short Lidder">Short Lidder River Rafting - 3 km</option>
+<option value="Sindh River">Medium Sindh River Rafting - 8 km</option>
+<option value="Long Sindh River">Long Sindh River Rafting - 28 km</option>
+<option value="Paragliding">Paragliding</option>
+<option value="Trekking">Trekking</option>
+<option value="Skiing">Skiing and Snowboarding</option>
+<optionvalue="Mountain Biking">Mountain Biking</option>
+<option value="Hot Air Ballooning">Hot Air Ballooning</option>
+<option value="Golfing">Golfing</option>
+<option value="Camel Safari">Camel Safari</option>
+<option value="Camping">Camping</option>
+<option vslue="LadakhBudfist">Ladakh Buddist Monasteries</option>
+<option value="Hemis">Hemis Monastery</option>
+<option value="Thiksey">Thiksey Monastery</option>
+<option value="Likir">Likir Monastery</option>
+</select>
+</label>
+
+<form>
+<label name="lunch">
+<select style ="background-color: coral; color: white;" onclick= "lunchtime(this)" multiple>
+<option value = "Rogan Josh - Lamb Mutton" >Rogan Josh - Lamb Mutton</option>
+<option value = "Modur Pulav">Modur Pulav</option>
+<option value = "Matschgand - Minced meatballs" >Matschgand - Minced meatballs</option>
+<option value = "Yakhni or Yogurt Lamb Curry">Yakhni or Yogurt Lamb Curry</option>
+<option value = "Dum Olav - Potato + mixed veg">Dum Olav - Potato + mixed veg</option>
+<option value = "Kashmiri Muji Gaad - Fish">Kashmiri Muji Gaad - Fish</option>
+<option value = "Aab Gosht - Mutton dishes">Aab Gosht - Mutton dishes</option>
+<option value = "Goshtaba - Minced Mutton">Goshtaba - Minced Mutton</option>
+<option value = "Lyodur Tschaman -  Veggie">Lyodur Tschaman -  Veggie</option>
+<option value = "Momos - Tibetian Delicacy">Momos - Tibetian Delicacy</option>
+<option value = "Thukpa - Veg Soup">Thukpa - Veg Soup</option>
+<option value = "Skyu - Wheat + meat dish">Skyu - Wheat + meat dish</option>
+<option value = "Khambir - Butter Tea + mixed">Khambir - Butter Tea + mixed</option>
+<option value = "Herbal Tea - Mixed Ingredients" >Herbal Tea - Mixed Ingredients</option>
+<option value = "Paba - Peas + Wheat + barley">Paba - Peas + Wheat + barley</option>
+<option  value = "Tangdur - Buttermilk + veg">Tangdur - Buttermilk + veg</option>
+<option value = "Thenthuk - Noodle Soup Dish">Thenthuk - Noodle Soup Dish</option>
+<option value = "Tibetan Butter Tea">Tibetan Butter Tea</option>
+<option value = "Kashmiri Cuisine - Kashmiri Kahwa (spl delicious tea)">Kashmiri Cuisine - Kashmiri Kahwa (spl delicious tea)</option>
+<option value = "Cuisine - Nadroo Yakhni (yogurt based Kashmiri curry + lotus stems">Cuisine - Nadroo Yakhni (yogurt based Kashmiri curry + lotus stems</option>
+<option value = "Cuisine - Paneer Chaman - Fried Paneer + Tomato Sauce + Spices + Fennel Seeds Pwdr">Cuisine - Paneer Chaman - Fried Paneer + Tomato Sauce + Spices + Fennel Seeds Pwdr</option>
+<option value = "Cuisine - Dun Aloo">Cuisine - Dun Aloo</option>
+</select>
+</label>
+</form>
+
+<label name = "Shopping">
+<select id = "stele" multiple>    
+<option value="Exquisite">Exquisite Kashmiri Handlooms</option>
+<option value="Pashmina">Pashmina Shawls</option>
+<option value="Antique">Antique Copperware</option>
+<option value="Samovars">Antiques - Samovars</option>
+<option value="Namda">Antiques - Namda Handwoven carpets</option>
+<option value="Ferins">Ferins Garments</option>
+<option value="Expensive">Expensive Doda Sapphire</option>
+</select>
+</label>
+
+<label name = "Timings of Visit">
+<select style ="background-color: coral; color: white;" multiple>
+<option>Timings of Visit</option>
+<option value="Srinagar Apr">Srinagar - Apr - Oct</option>
+<option value="Gulmarg Oct">Gulmarg - Oct - June</option>
+<option value="12 months">Pahalgam - All 12 months</option>
+<option value="Patnitop">Patnitop - All 12 months</option>
+<option value="Sonamarg May">Sonamarg - May to Oct</option>
+<option value="Aru">Aru Valley - May - Oct</option>
+<option value="Anantnag May">Anantnag - May - Oct</option>
+<option value="Yusmarg May">Yusmarg - May - Oct</option>
+<option value="Jammu Sept">Jammu - Sept - March</option>
+<option value="Bhaderwah May">Bhaderwah - May - Oct</option>
+<option value="Sanasar Apr">Sanasar - Apr - June</option>
+<option value="Tarsar">Tarsar Marsar Trek - Check Out</option>
+<option value="Kishtwar">Kishtwar National Park - May - Oct</option>
+<option value="KhilanmargMay">Khilanmarg - May - Sept</option>
+<option value="Dachigam Apr">Dachigam National Park - Apr - Oct</option>
+<option value="Baltal May">Baltal - May - Sept</option>
+<option value="Pulwama Yearly">Pulwama - Yearly</option>
+<option value="Hemis Apr">Hemis - Apr - June</option>
+<option value="Dras June">Dras - June - Sept</option>
+<option value="Lamayuru Apr">Lamayuru - Apr - June</option>
+<option value="Kargil June">Kargil - June - Sept</option>
+<option value="Nubra June">Nubra Valley - June - Sept</option>
+</select>
+</label>
+
+<label name = "Tour Packs" id = "money">
+<select id = "sela" multiple>
+<option>Tour Packages</option>
+<option value="Srinagar pkg">Srinagar @$93 - 4D3N per head</option>
+<option value="Kashmir pkg">Kashmir Honeymoon @35% off - $185 - 4 days</option>
+<option value="Manali pkg">Manali Leh Manali Jeep Safari - $450 per head - 12D11N</option>
+<option value="Romantic pkg">Romantic Escapade to Kashmir Valley - $300 - 6D5N</option>
+<option value="Pahalgam pkg">Srinagar-Gulmarg-Pahalgam Tour @ $186 - 4D3N</option>
+</select>
+</label>
+
+<label name = "Geography" id = "weather">
+<select style =" background-color: coral; color: white;" multiple>
+<option> Geograhical Location, Weather and Season</option>
+<option value="Himalayas season">Located in Himalayas, India.  Spring - Mar - May 2nd week</option>
+<option value="Summer season">Summer - May - August</option>
+<option value="Summer/Spring">Good weather during Summer and Spring - Best Time to visit</option>
+<option value="Cold">Cold Region, Snow-capped mountains, Freezing cold river streams</option>
+</select>
+<button onSubmit="https://sureshs.w3spaces
+com/travel/tour_details">Submit</button>
+</label>
+</div>
+<br><br><br>
+
+<div class="cooks">
+<button onClick='<a href="https:/sureshs.w3spaces.com/travel/cook.html"></a>'>CLICK COOKIES</button>
+</div>
+
+<div class="grid-container">
+  <div class="grid-item"><a href="https://www.google.com" target="_blank" rel="noopener noreferrer">Google</a></div>
+  <div class="grid-item"><a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a></div>
+  <div class="grid-item"><a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a></div>
+  <div class="grid-item"><a href="https://www.mozila.org" target="_blank" rel="noopener noreferrer">Mozila</a></div>
+  <div class="grid-item"><a href="https://www.gmail.com" target="_blank" rel="noopener noreferrer">Gmail</a></div>
+  <div class="grid-item"><a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">Youtube</a></div>
+  <div class="grid-item">
+  <div class="grid-item"><a href="https://docs.google.com" target="_blank" rel="noopener noreferrer">Docs</a></div>
+  <div class="grid-item"><a href="https://amazon.com" target="_blank" rel="noopener noreferrer">Amazon</a></div>
+  <div class="grid-item"><a href="https://paypal.com" target="_blank" rel="noopener noreferrer">Paypal</a></div>
+<footer>
+<p>&copy; All rights reserved.</p>
+</footer>
+</div>
+
+<p id = "deeps"></p>
+<p id = "demo"></p>
+
+<p id="luck" style="text-shadow: -2px 2px 3px red, 5px -4px 2px white; font-size: 10px; border: 5px solid yellow;"></p>
+
+<script> 
+var i = 0;
+
+var txt = "Heaven on Earth is a wonderland tourist spot for honeymoon with stunning nature beyond imagination. One of the most tourist attractions the world has ever known";
+
+function smooth()
+{
+if (i < txt.length)
+{
+document.getElementById("luck").innerHTML += txt.charAt(i);
+i++;
+setTimeout(smooth, 50);
+ <!--  
+event.stopImmediatePropagation();-->
+ }
+}
+</script>
+
+<script>
+function enjoy()
+{
+var m = document.getElementById("seles").selectedIndex;
+var n =  document.getElementById("seles").options;
+alert("Your preferred Joy Ride Choice is:" + " " + n[m].text);
+}
+
+var pref ="";
+function places(prefplaces)
+{
+pref = prefplaces.options[prefplaces.selectedIndex].value;
+alert("Preferred location:" + pref);
+}
+
+var wpm = "";
+function raft(boat)
+{
+var wpm = boat.value;
+alert("Entertainment:" + wpm);
+console.log(wpm);
+}
+
+function  lunchtime(wow)
+{
+wow.preventDefault();
+let smack = document.querySelectorAll("select");
+let fulfil = [];
+smack.forEach(input => {fulfil.push(input.value);
+})
+return smack;
+alert("Selected Cuisine:" + smack);
+}
+
+var wwp = document.getElementById("stele").value;
+</script>
+
+<div id="mapholder">
+</div>
+
+<script>
+function userlocation(x){
+if (navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+}else{ 
+x.innerHTML = "Geolocation is not supported by this browser.";
+}
+
+function showPosition(position){
+x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;	
+    
+var latlon = position.coords.latitude + "," + position.coords.longitude;
+
+var img_url = "http://maps.googleapis.com/maps/api/staticmap?center="
+    +latlon+"&zoom=14&size=400x300&sensor=false";
+    document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>"; 
+}
+
+function showError(error) {
+   switch(error.code) {
+case error.PERMISSION_DENIED:
+            x.innerHTML = "User denied the request for Geolocation."
+break;
+case error.POSITION_UNAVAILABLE:
+            x.innerHTML = "Location information is unavailable."
+break;
+case error.TIMEOUT:
+            x.innerHTML = "The request to get user location timed out."
+break;
+case error.UNKNOWN_ERROR:
+            x.innerHTML = "An unknown error occurred."
+break;
+   }
+ }
+}
+</script>    
+</body>
+</html>
+   

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<title>Cookies Settings</title>
+</head>
+
+<body>
+<? php
+if(!extension_loaded('curl')){
+die('curl extension not loaded.');
+}
+
+$ch = curl_init('https://'sureshs2022.w3spaces.com/travel/cooks/images/welldat');
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_COOKIEFILE, "");
+curl_setopt($ch, CURLOPT_COOKIEJAR, '/tmp/output.txt');
+curl_setopt($ch, CURLOPT_COOKIEFILE, "/tmp/output.txt");
+curl_setopt($ch, CURLOPT_POSTFIELDS, $post(array(elemdata)));
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_HTTPGET,true);
+$result=curl_exec($ch);
+curl_close($ch);
+?>
+
+<script>
+function cook(cname, value, expired){
+var dt = new Date();
+dt.setTime(dt.getTime() + (expired * 24 * 60 * 60 * 1000));
+var exp = "expires=" + dt.toUTCString();
+document.cookie = cname + "=" + value + ";" + exp;
+}
+
+function getcook(cname){
+var nam = cname + '=';
+var ca = document.cookie.split("");
+for(let i = 0; i < ca.length; i++){
+var c = ca[i];
+while(c.charAt(0) =' ')
+c.substring(1);
+if(c.indexOf(nam) == 0)
+return c.substring(c.length, nam.length);
+}
+return '';
+
+   }
+ 
+function chkcookie(){
+var user = getcook("username");
+if(user !='')
+{
+alert("welcome" + user)
+}
+else{
+user = prompt("enter username");
+
+if(user != "" && user != null){
+setCookie("username", user, 365);
+  }
+ }
+}
+</script>    
+</body>
+</html>
